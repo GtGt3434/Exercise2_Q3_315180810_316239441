@@ -7,6 +7,10 @@ import org.junit.Test;
 public class RootsTest {
 	Roots root;
 
+	/**
+	 * a test that checks if the run was completed successfully when when entering
+	 * invalid/out of range values
+	 */
 	@Test
 	public void testPartion1() {
 		// (0,1,2)
