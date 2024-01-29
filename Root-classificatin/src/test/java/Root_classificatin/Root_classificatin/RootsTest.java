@@ -22,27 +22,13 @@ public class RootsTest {
 	}
 
 	/**
-	 * a test that checks if the run was completed successfully when there are no
-	 * roots in the equation
+	 * a test that checks if the run was completed successfully when 'a' has a
+	 * minimal value
 	 */
 	@Test
-	public void testPartion2_No_roots() {
-		// (0,1,2)
-		Roots.calculate_roots(5, 1, 5);
+	public void BVA_A_MIN() {
 
-		String root_expected = Root_Types.No_roots.toString();
-
-		assertEquals(root_expected, Roots.root_types().toString());
-	}
-
-	/**
-	 * a test that checks if the run was completed successfully when a=0 / the
-	 * equation is not quadratic
-	 */
-	@Test
-	public void testPartion3_Not_quadratic() {
-		// (0,1,2)
-		Roots.calculate_roots(0, 3, 4);
+		Roots.calculate_roots(0, 4, 2);
 
 		String root_expected = Root_Types.Not_quadratic.toString();
 
@@ -50,29 +36,57 @@ public class RootsTest {
 	}
 
 	/**
-	 * a test that checks if the run was completed successfully when there is only 1
-	 * root in the equation
+	 * a test that checks if the run was completed successfully when 'a' has a
+	 * minimal value +1
 	 */
 	@Test
-	public void testPartion4_Equal_roots() {
-		// (0,1,2)
-		Roots.calculate_roots(3, 6, 3);
+	public void BVA_A_MIN_PLUS_1() {
 
-		String root_expected = Root_Types.Equal_roots.toString();
+		Roots.calculate_roots(1, 2, 10);
+
+		String root_expected = Root_Types.No_roots.toString();
 
 		assertEquals(root_expected, Roots.root_types().toString());
 	}
 
 	/**
-	 * a test that checks if the run was completed successfully when there are two
-	 * roots in the equation
+	 * a test that checks if the run was completed successfully when 'a' has a
+	 * numeric value
 	 */
 	@Test
-	public void testPartion5_Two_roots() {
-		// (0,1,2)
-		Roots.calculate_roots(2, 9, 3);
+	public void BVA_A_Numeric() {
+
+		Roots.calculate_roots(2, 8, 2);
 
 		String root_expected = Root_Types.Two_roots.toString();
+
+		assertEquals(root_expected, Roots.root_types().toString());
+	}
+
+	/**
+	 * a test that checks if the run was completed successfully when 'a' has a
+	 * maximum value -1
+	 */
+	@Test
+	public void BVA_A_MAX_MINUS_1() {
+
+		Roots.calculate_roots(99, 5, 5);
+
+		String root_expected = Root_Types.No_roots.toString();
+
+		assertEquals(root_expected, Roots.root_types().toString());
+	}
+
+	/**
+	 * a test that checks if the run was completed successfully when 'a' has a
+	 * maximum value
+	 */
+	@Test
+	public void BVA_A_MAX() {
+
+		Roots.calculate_roots(100, 20, 1);
+
+		String root_expected = Root_Types.Equal_roots.toString();
 
 		assertEquals(root_expected, Roots.root_types().toString());
 	}
